@@ -1,0 +1,24 @@
+package com.example.demo.models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "TrainDetails")
+public class details {
+
+	private String trainName;
+	@Id
+	private int trainNumber;
+	List<stopTime> trainStopsAndTimes=new ArrayList<stopTime>();
+	
+	
+	@Override
+	public String toString() {
+		return "trainnumber"+trainNumber;
+	}	
+	
+	
+}
