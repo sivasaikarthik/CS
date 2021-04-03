@@ -1,6 +1,6 @@
 package com.example.demo.models;
 
-import java.text.SimpleDateFormat;
+
 import java.util.*;
 
 
@@ -8,7 +8,14 @@ import java.util.*;
 public class stopTime {
 	private String stop;
 	Date time;
-
+	float cost;
+	
+	public float getCost() {
+		return cost;
+	}
+	public void setCost(float cost) {
+		this.cost = cost;
+	}
 	public String getStop() {
 		return stop;
 	}
@@ -21,10 +28,11 @@ public class stopTime {
 	public void setTime(Date time) {
 		this.time = time;
 	}
-	public stopTime(String stop, Date time) {
+	public stopTime(String stop, Date time,float cost) {
 		super();
 		this.stop = stop;
 		this.time = time;
+		this.cost=cost;
 	}
 	public stopTime() {
 		super();
