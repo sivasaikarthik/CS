@@ -1,33 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -47,21 +17,18 @@
   text-align: center;
 }
 
-.RailwayDetailsBackground
-{
-  background-image:linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.2)), url('/src/Components/images/2.jpg');
-  height: 800px;
+.RailwayDetailsBackground {
+  background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.2)),
+    url("/src/Components/images/2.jpg");
+  height: inherit;
   color: white;
-  background-position: center;  
+  background-position: center;
   background-repeat: no-repeat;
-  background-size:cover;
-  
-
+  background-size: cover;
 }
-
 
 .label-checkbox {
   display: flex;
   align-items: center;
- padding-left: 50px;
+  padding-left: 50px;
 }

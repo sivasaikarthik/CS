@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- CSS style to set height property of content -->
+    <style>
+        .auto {
+            height: auto;
+            background-color: orange;
+        }
+
+        .inherit {
+            height: inherit;
+            background-color: cyan;
+        }
+
+        .percentage {
+            height: 25%;
+        }
+
+        h1 {
+            color: green;
+        }
+    </style>
+</head>
+
+<body >
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div className="mb-3">
+                <label for="acCoach" className="pr-5">
+                    No of Ac Coaches
+                </label>
+                <input required type="number" name="acCoach" placeholder="acCoach" id="acCoach"
+                    value={this.state.acCoach} onChange={this.changeHandler}></input>
+            </div>
+        </div>
+        
+        <div class="col">
+          
+            <div className="mb-3">
+                <label for="ac" className="pr-5">
+                    No of Seats in Ac
+                </label>
+                <input required type="number" name="ac" placeholder="ac" id="ac"
+                    value={this.state.ac} onChange={this.changeHandler}></input>
+            </div>
+        </div>
+    </div>
+    <br/>
+   <div class="row">
+        <div class="col">
+            <div className="mb-3">
+                <label for="SleeperCoaach" className="pr-5">
+                    No of Sleeper Coaach
+                </label>
+                <input required type="number" name="SleeperCoaach" placeholder="SleeperCoaach" id="SleeperCoaach"
+                    value={this.state.SleeperCoaach} onChange={this.changeHandler}></input>
+            </div>
+        </div>
+        
+        <div class="col">
+           
+            <div className="mb-3">
+                <label for="sleeper" className="pr-5">
+                    No of Seats in sleeper
+                </label>
+                <input required type="number" name="sleeper" placeholder="sleeper" id="sleeper"
+                    value={this.state.sleeper} onChange={this.changeHandler}></input>
+            </div>
+        </div>
+
+
+   </div>
+     
+</div>
+    
+</body>
+
+</html>
+
+
+ sleeper: 0,
+      ac: 0,
+      acCoach: 0,
+      : 0,

@@ -29,12 +29,11 @@ public class trainDetailsController {
 	{
 		return repo.findAll();
 	}
-	
-	  @GetMapping("/allTrains/{trainNumber}") 
-	  public  Optional<details> findByTrainNumber(@PathVariable int trainNumber) { 
-		  return repo.findById(trainNumber);
-		  }
-	 
+	/*
+	 * @GetMapping("/allTrains/{trainNumber}") public <details>
+	 * findByTrainNumber(@PathVariable int trainNumber) { return
+	 * repo.findById(trainNumber); }
+	 */
 	
 	@PostMapping("/addTrain")
 	public String addTrain(@RequestBody details d)

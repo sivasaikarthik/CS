@@ -52,15 +52,13 @@ public class details {
 	}
 
 
-
-
-	public int getSleeperCoach() {
-		return SleeperCoach;
+	public int getSleeperCoaach() {
+		return SleeperCoaach;
 	}
 
 
-	public void setSleeperCoach(int sleeperCoach) {
-		SleeperCoach = sleeperCoach;
+	public void setSleeperCoach(int SleeperCoach) {
+		SleeperCoach = SleeperCoach;
 	}
 
 
@@ -76,10 +74,6 @@ public class details {
 
 	
 
-	
-
-	
-
 	public details(String trainName, int trainNumber, List<stopTime> trainStopsAndTimes, week weekDays, int sleeper,
 			int ac, int acCoach, int sleeperCoach) {
 		super();
@@ -90,7 +84,7 @@ public class details {
 		this.sleeper = sleeper;
 		this.ac = ac;
 		this.acCoach = acCoach;
-		this.SleeperCoach = sleeperCoach;
+		SleeperCoach = sleeperCoach;
 	}
 
 

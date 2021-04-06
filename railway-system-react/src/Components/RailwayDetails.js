@@ -19,6 +19,10 @@ class RailwayDetails extends Component {
       thrusday: false,
       friday: false,
       saturday: false,
+      sleeper: 0,
+      ac: 0,
+      acCoach: 0,
+      SleeperCoach: 0,
     };
   }
   changeHandler = (event) => {
@@ -38,7 +42,6 @@ class RailwayDetails extends Component {
       trainName,
       trainStopsAndTimes,
       trainNumber,
-      trainDetails,
       sunday,
       monday,
       tuesday,
@@ -46,8 +49,12 @@ class RailwayDetails extends Component {
       thrusday,
       friday,
       saturday,
+      sleeper,
+      ac,
+      acCoach,
+      SleeperCoach,
     } = this.state;
-    e.preventDefault();
+
     let dup = {
       trainName: trainName,
       trainNumber: trainNumber,
@@ -61,21 +68,27 @@ class RailwayDetails extends Component {
         friday: friday,
         saturday: saturday,
       },
+      sleeper: sleeper,
+      ac: ac,
+      acCoach: acCoach,
+      sleeperCoach: SleeperCoach,
     };
     console.log(dup);
-    /* axios
-      .post("http://localhost:9000/addTrain", dup)
-      .then((res) => {
-        alert("Train Details are added");
-      })
-      .catch((error) => {
-        alert("Server is not connected");
-      }); */
-    console.log("data sent to data base");
+    if (trainNumber == 0) {
+      alert("Fill the train details to upload");
+    } else {
+      alert(SleeperCoach);
+      axios
+        .post("http://localhost:9000/addTrain", dup)
+        .then((res) => {
+          alert("Train Details are added");
+        })
+        .catch((error) => {
+          alert("Server is not connected");
+        });
 
-    /* axios.post('https://jsonplaceholder.typicode.com/posts',this.state)
-        .then(response=>{console.log(response)})
-        .catch(error=>{console.log(error)}) */
+      console.log("data sent to data base");
+    }
   };
   addStop = () => {
     const { trainStopsAndTimes, stops, time, cost } = this.state;
@@ -190,12 +203,86 @@ class RailwayDetails extends Component {
               </div>
             </div>
           </div>
-          <div>
+          <div className="container">
             <th className="pl-4 pr-5">Time</th>
             <th className=" pr-5 pr-3">Stop</th>
             <th className="pl-3">Cost</th>
             {trainstop}
           </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div className="mb-3">
+                  <label for="acCoach" className="pr-5">
+                    No of Ac Coaches
+                  </label>
+                  <input
+                    required
+                    type="number"
+                    name="acCoach"
+                    placeholder="acCoach"
+                    id="acCoach"
+                    value={this.state.acCoach}
+                    onChange={this.changeHandler}
+                  ></input>
+                </div>
+              </div>
+
+              <div class="col">
+                <div className="mb-3">
+                  <label for="ac" className="pr-5">
+                    No of Seats in Ac
+                  </label>
+                  <input
+                    required
+                    type="number"
+                    name="ac"
+                    placeholder="ac"
+                    id="ac"
+                    value={this.state.ac}
+                    onChange={this.changeHandler}
+                  ></input>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">
+                <div className="mb-3">
+                  <label for="SleeperCoach" className="pr-5">
+                    No of Sleeper Coaach
+                  </label>
+                  <input
+                    type="number"
+                    name="SleeperCoach"
+                    placeholder="SleeperCoach"
+                    id="SleeperCoach"
+                    value={this.state.SleeperCoach}
+                    onChange={this.changeHandler}
+                  ></input>
+                </div>
+              </div>
+
+              <div class="col">
+                <div className="mb-3">
+                  <label for="sleeper" className="pr-5">
+                    No of Seats in sleeper
+                  </label>
+                  <input
+                    required
+                    type="number"
+                    name="sleeper"
+                    placeholder="sleeper"
+                    id="sleeper"
+                    value={this.state.sleeper}
+                    onChange={this.changeHandler}
+                  ></input>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="center">
             <table>
               <td>Select the week day train run</td>
@@ -296,7 +383,10 @@ class RailwayDetails extends Component {
           </button>
         </form>
 
-        <div></div>
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     );
   }

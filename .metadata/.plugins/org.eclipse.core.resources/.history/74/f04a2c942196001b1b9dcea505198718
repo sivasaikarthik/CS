@@ -16,54 +16,7 @@ public class details {
 	private int trainNumber;
 	List<stopTime> trainStopsAndTimes=new ArrayList<stopTime>();
 	week weekDays;
-	private int  sleeper;
-	private int ac;
-	private int acCoach;
-	private int SleeperCoach;
 	
-	
-	public int getSleeper() {
-		return sleeper;
-	}
-
-
-	public void setSleeper(int sleeper) {
-		this.sleeper = sleeper;
-	}
-
-
-	public int getAc() {
-		return ac;
-	}
-
-
-	public void setAc(int ac) {
-		this.ac = ac;
-	}
-
-
-	public int getAcCoach() {
-		return acCoach;
-	}
-
-
-	public void setAcCoach(int acCoach) {
-		this.acCoach = acCoach;
-	}
-
-
-
-
-	public int getSleeperCoach() {
-		return SleeperCoach;
-	}
-
-
-	public void setSleeperCoach(int sleeperCoach) {
-		SleeperCoach = sleeperCoach;
-	}
-
-
 	public week getWeekDays() {
 		return weekDays;
 	}
@@ -74,23 +27,12 @@ public class details {
 	}
 
 
-	
-
-	
-
-	
-
-	public details(String trainName, int trainNumber, List<stopTime> trainStopsAndTimes, week weekDays, int sleeper,
-			int ac, int acCoach, int sleeperCoach) {
+	public details(String trainName, int trainNumber, List<stopTime> trainStopsAndTimes,week weekDays) {
 		super();
 		this.trainName = trainName;
 		this.trainNumber = trainNumber;
 		this.trainStopsAndTimes = trainStopsAndTimes;
-		this.weekDays = weekDays;
-		this.sleeper = sleeper;
-		this.ac = ac;
-		this.acCoach = acCoach;
-		this.SleeperCoach = sleeperCoach;
+		this.weekDays=weekDays;
 	}
 
 
